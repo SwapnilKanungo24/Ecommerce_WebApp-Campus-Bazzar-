@@ -1,0 +1,52 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Signup</title>
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="auth-container">
+    <!-- Navigation -->
+    <nav class="auth-nav">
+      <a href="indextest.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
+    </nav>
+
+    <!-- Form Container -->
+    <div class="form-wrapper">
+      <div class="form-header">
+        <h2 id="form-title">Login</h2>
+        <p id="form-subtitle">Welcome back! Please login to your account.</p>
+      </div>
+
+      <!-- Login Form -->
+      <form id="auth-form" action="/auth/login" method="POST">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <div class="form-group" id="confirm-password-group" style="display: none;">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password">
+        </div>
+        <button type="submit" class="btn btn-primary" id="auth-submit-btn">Login</button>
+      </form>
+
+      <!-- Toggle Form -->
+      <p class="toggle-text">
+        Don't have an account? <a href="#" id="toggle-form">Sign Up</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- <script src="auth.js"></script> -->
+</body>
+</html>

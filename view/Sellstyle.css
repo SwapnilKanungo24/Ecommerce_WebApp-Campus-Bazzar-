@@ -1,0 +1,281 @@
+
+body {
+    background: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background: linear-gradient(to right, #007cf0, #00dfd8);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 124, 240, 0.2);
+  }
+  
+  .header-left {
+    font-size: 1.5rem;
+  }
+  
+  .header-right {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .header-right button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .header-right button:hover {
+    transform: translateY(-2px);
+  }
+  
+  .header-right .user {
+    background: white;
+    color: #007cf0;
+  }
+  
+  .header-right .logout {
+    background: #ff4b5c;
+    color: white;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #333;
+    margin: 40px 0 30px;
+    letter-spacing: 1px;
+  }
+  
+  .main-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 30px 80px;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .category-card {
+    flex: 1 1 60%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  
+  /* Enhanced card styling */
+  .card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: none;
+  }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    height: 10px;
+    background: linear-gradient(to right, #007cf0, #00dfd8);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(-100%);
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 35px rgba(0, 124, 240, 0.2);
+  }
+  
+  .card:hover::before {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .card i {
+    font-size: 3rem;
+    color: #007cf0;
+    background: rgba(0, 124, 240, 0.1);
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover i {
+    color: white;
+    background: linear-gradient(to right, #007cf0, #00dfd8);
+    transform: scale(1.1);
+  }
+  
+  .card p {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #222;
+  }
+  
+  .subcategory-container {
+    flex: 1 1 30%;
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+    display: none;
+  }
+  
+  .subcategory-container h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #007cf0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(0, 124, 240, 0.1);
+  }
+  
+  .subcategory-container ul {
+    padding-left: 20px;
+    list-style-type: none;
+  }
+  
+  .subcategory-container li {
+    margin: 12px 0;
+    color: #444;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    position: relative;
+    padding-left: 10px;
+  }
+  
+  .subcategory-container li::before {
+    content: '•';
+    color: #007cf0;
+    position: absolute;
+    left: -10px;
+  }
+  
+  .subcategory-container li:hover {
+    color: #007cf0;
+  }
+  
+  /* Form styling */
+  .sell-form {
+    margin-top: 20px;
+  }
+  
+  .sell-form h4 {
+    color: #007cf0;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+  }
+  
+  .sell-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .sell-form input, .sell-form textarea {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .sell-form input:focus, .sell-form textarea:focus {
+    outline: none;
+    border-color: #007cf0;
+    box-shadow: 0 0 0 3px rgba(0, 124, 240, 0.1);
+  }
+  
+  #productImage {
+    padding: 10px 0;
+    border: 2px dashed #e0e0e0;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  
+  #productImage:hover {
+    border-color: #007cf0;
+  }
+  
+  .sell-form button {
+    background: linear-gradient(to right, #007cf0, #00dfd8);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .sell-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 124, 240, 0.3);
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    background: white;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .form-page {
+    max-width: 600px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .category-card {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+    }
+    
+    .card {
+      padding: 20px 15px;
+    }
+    
+    .card i {
+      font-size: 2rem;
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+    }
+  }

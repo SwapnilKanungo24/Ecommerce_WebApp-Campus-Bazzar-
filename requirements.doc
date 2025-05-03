@@ -1,0 +1,8 @@
+express         # Web framework for Node.js
+mongoose        # MongoDB object modeling tool
+bcryptjs        # Hashes passwords securely
+jsonwebtoken    # For generating and verifying JWT tokens
+dotenv          # Loads environment variables from a .env file
+cors            # Enables Cross-Origin Resource Sharing
+body-parser     # Parses incoming request bodies
+nodemon         # Automatically restarts the server during development

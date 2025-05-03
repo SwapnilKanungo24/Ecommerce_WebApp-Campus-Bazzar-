@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verify OTP</title>
+</head>
+<body>
+  <h2>Enter OTP sent to your Acropolis email</h2>
+
+  <% if (error) { %>
+    <p style="color: red;"><%= error %></p>
+  <% } %>
+
+  <form action="/auth/verify" method="POST">
+    <input type="number" name="otp" placeholder="Enter 6-digit OTP" required />
+    <button type="submit">Verify</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,62 @@
+/* .form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 8%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-container label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container .btn {
+    width: 100%;
+    padding: 10px;
+    background-color:#4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container .btn:hover {
+    background-color: #45a049; 
+}
+footer {
+    background-color: #f29100ac;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 145px;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+}
+/* .F_para{
+    position: fixed; 
+} */
+/* .main_cont{
+    background-image: url('images/campus.jpeg');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+} */ */

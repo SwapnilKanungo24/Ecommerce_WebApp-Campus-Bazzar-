@@ -1,0 +1,375 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campus Bazzar</title>
+  <link rel="stylesheet" href="/home.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <div id="main">
+    <nav>
+      <a href="/home"><img src="/images/campus.png" alt="Campus Bazzar Logo"></a>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <div class="navbar-search">
+        <input type="text" placeholder="Search products..." />
+        <button><i class="fas fa-search"></i></button>
+      </div>
+      <div class="navbar-icons">
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-shopping-cart"></i>
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="navbar-menu" id="navbarMenu">
+        <a href="/sell" class="sell-btn">Sell</a>
+      </div>
+    </nav>
+
+    <section id="hero">
+      <div id="left">
+        <h2>BUY & SELL<br/>EFFORTLESSLY!</h2>
+        
+        <p></p><span>The scope of this project is to develop a user-friendly online platform where students within a college or university can buy and sell second-hand stationery, books, and other academic-related items.</span>
+        The platform will focus on facilitating end to end transactions with features like user registration, product listings, search filters, and etc.. . Future integrations may include payment gateways and partnerships.</p>
+      </div>
+      <div id="right">
+        <img src="/images/academic.jpg" alt="Hero Image"/>
+      </div>
+    </section>
+
+    <section class="A_Class">
+      <div class="scrolling-text-inner" role="marquee">
+        <div class="scrolling-text">
+          <div class="scrolling-text-item">A Platform Supporting College Community Needs Through Buy & Sell.</div>
+          <div class="scrolling-text-item">Affordable & Sustainable Academic Marketplace.</div>
+          <div class="scrolling-text-item">Verified College Email Logins for Safety & Trust.</div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="product-section">
+      <h2>All Products</h2>
+      <div class="product-grid">
+        <% products.forEach(product => { %>
+          <div class="product-item">
+            <a href="/product/<%= product._id %>">
+              <img src="<%= product.image %>" alt="<%= product.title %>">
+              <p><strong><%= product.title %></strong><br>₹<%= product.price %></p>
+            </a>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Campus Bazzar</h3>
+          <p>Your one-stop marketplace for premium stationery and academic essentials.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/categories">Categories</a></li>
+            <li><a href="/sell">Sell</a></li>
+            <li><a href="/wishlist">Wishlist</a></li>
+            <li><a href="/cart">Cart</a></li>
+            <li><a href="/profile">Profile</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>Email: campusbazzar2025@gmail.com</p>
+          <p>Phone: +91 9131984349</p>
+          <p>Follow us:</p>
+          <div class="social-icons">
+            <a href="#"><img src="/images/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="/images/twitter.jpg" alt="Twitter"></a>
+            <a href="#"><img src="/images/instaggram.jpg" alt="Instagram"></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Campus Bazzar. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html> -->
+
+<!-- campus-bazzar.ejs -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Bazzar</title>
+  <link rel="stylesheet" href="/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="main">
+    <!-- Header/Navigation -->
+    <header>
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <a href="/home">
+            <img src="/images/campus.png" alt="Campus Bazzar Logo" class="logo">
+          </a>
+          <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        
+        <div class="navbar-search">
+          <input type="text" placeholder="Search products..." aria-label="Search products">
+          <button type="submit" aria-label="Search">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        
+        <div class="navbar-actions">
+          <div class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+            <i class="fas fa-moon" id="darkIcon"></i>
+            <i class="fas fa-sun" id="lightIcon"></i>
+          </div>
+          
+          <div class="wishlist-icon">
+            <a href="/wishlist" aria-label="Wishlist">
+              <i class="fas fa-heart"></i>
+              <span class="badge">0</span>
+            </a>
+          </div>
+          
+          <div class="cart-icon">
+            <a href="/cart" aria-label="Shopping Cart">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="badge">0</span>
+            </a>
+          </div>
+          
+          <div class="user-profile">
+            <button class="profile-btn" id="profileBtn" aria-label="User Profile">
+              <i class="fas fa-user"></i>
+            </button>
+            <div class="dropdown-menu" id="profileDropdown">
+              <a href="/profile">My Profile</a>
+              <a href="/orders">My Orders</a>
+              <a href="/settings">Settings</a>
+              <a href="/logout">Logout</a>
+            </div>
+          </div>
+          
+          <a href="sell" class="sell-btn">Sell</a>
+        </div>
+      </nav>
+    </header>
+    
+    <!-- Categories Section -->
+    <section class="categories">
+      <div class="category-container">
+        <div class="category-bubble">
+          <a href="/category/books">
+            <i class="fas fa-book"></i>
+            <span>Books</span>
+          </a>
+        </div>
+        <div class="category-bubble">
+          <a href="/category/stationery">
+            <i class="fas fa-pen"></i>
+            <span>Stationery</span>
+          </a>
+        </div>
+        <div class="category-bubble">
+          <a href="/category/electronics">
+            <i class="fas fa-laptop"></i>
+            <span>Electronics</span>
+          </a>
+        </div>
+        <div class="category-bubble">
+          <a href="/category/notes">
+            <i class="fas fa-sticky-note"></i>
+            <span>Notes</span>
+          </a>
+        </div>
+        <div class="category-bubble">
+          <a href="/category/furniture">
+            <i class="fas fa-chair"></i>
+            <span>Furniture</span>
+          </a>
+        </div>
+        <div class="category-bubble">
+          <a href="/category/clothing">
+            <i class="fas fa-tshirt"></i>
+            <span>Clothing</span>
+          </a>
+        </div>
+        <div class="category-bubble">
+          <a href="/category/other">
+            <i class="fas fa-ellipsis-h"></i>
+            <span>Other</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>BUY & SELL<br>EFFORTLESSLY!</h1>
+          <p>The ultimate platform for students to trade academic essentials. Find affordable second-hand books, stationery, and more from fellow students.</p>
+          <div class="hero-buttons">
+            <a href="/browse" class="btn btn-primary">Browse Items</a>
+            <a href="/sell" class="btn btn-secondary">Sell Now</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="/images/academic.jpg" alt="Students trading items" class="hero-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- Scrolling Announcement -->
+    <section class="announcement">
+      <div class="announcement-container">
+        <div class="announcement-content">
+          <p>A Platform Supporting College Community Needs Through Buy & Sell</p>
+          <p>Affordable & Sustainable Academic Marketplace</p>
+          <p>Verified College Email Logins for Safety & Trust</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Products Section -->
+    <section class="products-section">
+      <div class="section-header">
+        <h2>Featured Products</h2>
+        <a href="/all-products" class="view-all">View All</a>
+      </div>
+      
+      <div class="product-grid">
+        <% products.forEach(product => { %>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="<%= product.image %>" alt="<%= product.title %>">
+              <button class="wishlist-btn" data-id="<%= product._id %>">
+                <i class="far fa-heart"></i>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3><%= product.title %></h3>
+              <p class="product-price">₹<%= product.price %></p>
+              <p class="product-location"><i class="fas fa-map-marker-alt"></i> <%= product.location %></p>
+              <div class="product-actions">
+                <a href="/product/<%= product._id %>" class="view-btn">View Details</a>
+                <button class="add-to-cart-btn" data-id="<%= product._id %>">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features">
+      <div class="feature-container">
+        <div class="feature">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Secure Transactions</h3>
+          <p>All users verified with college email</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-hand-holding-usd"></i>
+          <h3>Save Money</h3>
+          <p>Affordable prices on used items</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-recycle"></i>
+          <h3>Sustainable</h3>
+          <p>Reduce waste through reuse</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-university"></i>
+          <h3>Campus Community</h3>
+          <p>Connect with fellow students</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+      <div class="newsletter-container">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to our newsletter for the latest deals and campus events</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your college email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Campus Bazzar</h3>
+          <p>Your one-stop marketplace for premium stationery and academic essentials.</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/categories">Categories</a></li>
+            <li><a href="sell">Sell</a></li>
+            <li><a href="/wishlist">Wishlist</a></li>
+            <li><a href="/cart">Cart</a></li>
+            <li><a href="/profile">Profile</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Help & Support</h4>
+          <ul>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/shipping">Shipping Policy</a></li>
+            <li><a href="/return">Return Policy</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fas fa-envelope"></i> campusbazzar2025@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +91 9131984349</p>
+          <p><i class="fas fa-map-marker-alt"></i> Campus Center, Building 3</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Campus Bazzar. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>

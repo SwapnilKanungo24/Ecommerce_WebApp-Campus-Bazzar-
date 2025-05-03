@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campus Bazaar - Sell</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="Sellstyle.css">
+</head>
+<body>
+  <header>
+    <div class="header-left">Campus Bazaar</div>
+    <div class="header-right">
+      <button class="user"><i class="fa-solid fa-user"></i> User</button>
+      <button class="logout">Logout</button>
+    </div>
+  </header>
+
+  <h2>Select the Category to Sell</h2>
+
+  <div class="main-container">
+    <div class="category-card">
+      <div class="card" data-category="Stationery"><i class="fa-solid fa-pen-nib"></i><p>Stationery</p></div>
+      <div class="card" data-category="Clothes & Bags"><i class="fa-solid fa-shirt"></i><p>Clothes & Bags</p></div>
+      <div class="card" data-category="Electronics"><i class="fa-solid fa-tv"></i><p>Electronics & Appliances</p></div>
+      <div class="card" data-category="Furniture"><i class="fa-solid fa-couch"></i><p>Furniture</p></div>
+      <div class="card" data-category="Mobile"><i class="fa-solid fa-mobile-screen-button"></i><p>Mobile & Tablets</p></div>
+      <div class="card" data-category="Bikes"><i class="fa-solid fa-bicycle"></i><p>Bikes & Cycles</p></div>
+    </div>
+
+    <div class="subcategory-container" id="subcategoryContainer">
+      <h3 id="subcategoryTitle">Subcategories</h3>
+      <ul id="subcategoryList"></ul>
+
+      <!-- Form section -->
+      <div id="sellFormContainer" class="sell-form" style="display: none;">
+        <h4 id="formTitle">Post Your Product</h4>
+        <form id="sellForm">
+          <input type="text" id="productTitle" placeholder="Product Title" required />
+          <input type="number" id="productPrice" placeholder="Price (₹)" required />
+          <textarea id="productDescription" placeholder="Description" rows="4" required></textarea>
+          <input type="file" id="productImage" accept="image/*" />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+<!-- 
+  <footer>
+    &copy; 2025 Campus Bazaar. All rights reserved.
+  </footer> -->
+
+  <script src="SellScript.js"></script>
+</body>
+</html>
+
+

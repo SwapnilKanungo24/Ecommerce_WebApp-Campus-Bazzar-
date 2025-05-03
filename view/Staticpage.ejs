@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Bazaar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .appbar {
+            background-color: #007bff;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .main-content {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .main-content h1 {
+            font-size: 3rem;
+            color: #333;
+        }
+        .product-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem;
+        }
+        .product-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 250px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .product-card .product-info {
+            padding: 1rem;
+            text-align: center;
+        }
+        .product-card .product-info h3 {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+        .product-card .product-info p {
+            color: #555;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+        .product-card .product-info .price {
+            font-size: 1.1rem;
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="appbar">Campus Bazaar</div>
+    <div class="main-content">
+        <h1>Acropolis</h1>
+    </div>
+    <div class="product-container">
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250x150" alt="Product 1">
+            <div class="product-info">
+                <h3>Product 1</h3>
+                <p>High-quality product description.</p>
+                <p class="price">$20</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250x150" alt="Product 2">
+            <div class="product-info">
+                <h3>Product 2</h3>
+                <p>Durable and reliable product.</p>
+                <p class="price">$35</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250x150" alt="Product 3">
+            <div class="product-info">
+                <h3>Product 3</h3>
+                <p>Stylish and affordable product.</p>
+                <p class="price">$15</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

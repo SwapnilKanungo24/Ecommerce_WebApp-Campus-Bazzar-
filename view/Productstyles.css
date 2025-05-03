@@ -1,0 +1,153 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: orangered;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    font-size: 30px;
+    color: #333;
+}
+
+.product-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.product-image-section {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-details-section {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.product-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 24px;
+    color: #ff4400;
+    margin-bottom: 20px;
+}
+
+.product-description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.product-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.product-features li {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.product-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.buy-now,
+.add-to-cart {
+    background-color: #002f34;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-now:hover {
+    background-color: #00474d;
+}
+
+.add-to-cart {
+    background-color: #3a77ff;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+.chat-to-seller {
+    background-color: #ff4400b4; /* Orange-red color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chat-to-seller:hover {
+    background-color: #e03e00; /* Darker orange-red on hover */
+}
+
+.footer {
+    background-color: #002f34;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}

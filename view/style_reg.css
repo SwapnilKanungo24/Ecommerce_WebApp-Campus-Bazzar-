@@ -1,0 +1,105 @@
+/* General Reset and Layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    background-color: #f29100ac;
+    color: white;
+    padding: 10px 0; /* Adjusted padding */
+    text-align: start;
+    font-size: 20px; /* Reduced font size */
+    font-weight: bold;
+    position: absolute; /* Fix header at the top */
+    top: 0;
+    left: 0;
+}
+
+footer {
+    width: 100%;
+    background-color: #f29100ac;
+    color: white;
+    text-align: center;
+    padding: 8px 0; /* Adjusted padding */
+    position: absolute; /* Fix footer at the bottom */
+    bottom: 0;
+    left: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 20px; /* Reduced padding */
+    border-radius: 8px; /* Slightly smaller border radius */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Slightly softer shadow */
+    width: 100%;
+    max-width: 350px; /* Reduced the max width */
+    margin-top: 80px; /* Adjusted margin-top for spacing */
+    margin-bottom: 60px; /* Space for footer */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 22px; /* Reduced font size */
+}
+
+label {
+    font-size: 13px; /* Reduced font size */
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 8px; /* Reduced padding */
+    margin-bottom: 15px; /* Reduced margin-bottom */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px; /* Reduced font size */
+}
+
+button {
+    width: 100%;
+    padding: 8px; /* Reduced padding */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px; /* Reduced font size */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

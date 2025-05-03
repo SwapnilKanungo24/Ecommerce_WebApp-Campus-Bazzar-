@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sell Your Product - Campus Bazaar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* CSS same as before */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-container {
+      max-width: 700px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #007cf0;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #00dfd8;
+      box-shadow: 0 0 0 2px rgba(0, 223, 216, 0.2);
+    }
+
+    button[type="submit"] {
+      background: #00dfd8;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      display: block;
+      margin: auto;
+      transition: background 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background: #00b8b0;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Post Your Product</h2>
+    <p><strong>Category:</strong> <span id="category">Electronics</span></p>
+    <p><strong>Subcategory:</strong> <span id="subcategory">Mobile</span></p>
+    <input type="file" id="productImage" name="image" accept="image/*" required />
+<form id="productForm" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="productTitle">Product Title</label>
+    <input type="text" id="productTitle" name="title" placeholder="Product Title" required />
+  </div>
+
+  <div class="form-group">
+    <label for="productPrice">Price (₹)</label>
+    <input type="number" id="productPrice" name="price" placeholder="e.g. 500" required />
+  </div>
+
+  <!-- ✅ IMAGE UPLOAD FIELD ADDED -->
+  <div class="form-group">
+    <label for="productImage">Add a Photo</label>
+    <input type="file" id="productImage" name="image" accept="image/*" required />
+  </div>
+
+  <div class="form-group">
+    <label for="productDescription">More Information</label>
+    <textarea id="productDescription" name="description" rows="4" placeholder="Add more details..." required></textarea>
+  </div>
+
+  <hr />
+
+  <div class="form-group">
+    <label for="sellerName">Your Name</label>
+    <input type="text" id="sellerName" name="name" required />
+  </div>
+
+  <div class="form-group">
+    <label for="sellerEmail">Email ID</label>
+    <input type="email" id="sellerEmail" name="email" required />
+  </div>
+
+  <div class="form-group">
+    <label for="sellerPhone">Phone Number</label>
+    <input type="tel" id="sellerPhone" name="phone" required />
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+  </div>
+
+  <script>
+    // Get form and span elements
+    const form = document.getElementById('productForm');
+    const categorySpan = document.getElementById('category');
+    const subcategorySpan = document.getElementById('subcategory');
+  
+    // ✅ READ URL PARAMETERS
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get('category');
+    const subcategoryParam = urlParams.get('subcategory');
+  
+    // ✅ Set category and subcategory dynamically
+    if (categoryParam) {
+      categorySpan.textContent = categoryParam;
+    }
+    if (subcategoryParam) {
+      subcategorySpan.textContent = subcategoryParam;
+    }
+  
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+  
+      const formData = new FormData(form);
+      formData.append("category", categorySpan.textContent);
+      formData.append("subcategory", subcategorySpan.textContent);
+  
+      try {
+        const response = await fetch('http://localhost:8000/add', {
+          method: 'POST',
+          body: formData
+        });
+  
+        const result = await response.json();
+        if (response.ok) {
+          alert(result.message);
+          form.reset();
+        } else {
+          alert(result.error || 'Failed to submit the form.');
+        }
+      } catch (err) {
+        console.log(err);
+        alert('Something went wrong while submitting the form.');
+      }
+    });
+  </script>
+  <script src="SellScript.js"></script>  
+  
+</body>
+</html>

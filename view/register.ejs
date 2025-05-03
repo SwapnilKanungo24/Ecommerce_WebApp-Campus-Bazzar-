@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registration Page</title>
+  <link rel="stylesheet" href="style_reg.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">CampusBazzar</div>
+  </header>
+
+  <div class="container">
+    <h2>Register an Account</h2>
+    <form id="registerForm" action="/auth/register" method="POST">
+      <label for="name"><b>Full Name:</b></label>
+      <input type="text" id="name" name="name" placeholder="Enter your name..." required />
+
+      <label for="email"><b>Email (Acropolis)*:</b></label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address..." required />
+
+      <label for="number"><b>Phone Number:</b></label>
+      <input type="text" id="number" name="number" placeholder="Enter your contact number..." required />
+
+      <label for="collegeID"><b>College ID:</b></label>
+      <input type="text" id="collegeID" name="collegeID" placeholder="Enter your unique ID number..." required />
+
+      <label for="password"><b>Password:</b></label>
+<div style="position: relative;">
+    <input type="password" id="password" name="password" placeholder="Make it a strong password..." required />
+    <img src="./images/eye.png" onclick="togglePassword('password')" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer; width: 20px;" alt="Show Password">
+</div>
+
+<label for="confirm-password"><b>Confirm Password:</b></label>
+<div style="position: relative;">
+    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password..." required />
+    <img src="./images/eye.png" onclick="togglePassword('password')" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer; width: 20px;" alt="Show Password"></div>
+
+
+      <button type="submit"><b>Register</b></button>
+    </form>
+
+    <p>Already have an account? <a href="login">Login</a></p>
+  </div>   
+
+  <footer>
+    &copy; 2024 CampusBazzar. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", async function(event) {
+        const email = document.getElementById("email").value.trim();
+        const number = document.getElementById("number").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const confirmPassword = document.getElementById("confirm-password").value.trim();
+
+        // ✅ 1. Acropolis email check
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@acropolis\.in$/;
+        if (!emailPattern.test(email)) {
+            alert("Only Acropolis Institute email addresses are allowed.");
+            event.preventDefault();
+            return;
+        }
+
+        // ✅ 2. Phone number check (10 digits, all numbers)
+        const phonePattern = /^[0-9]{10}$/;
+        if (!phonePattern.test(number)) {
+            alert("Please enter a valid 10-digit phone number.");
+            event.preventDefault();
+            return;
+        }
+
+        // ✅ 3. Password strength check  
+        const strongPassword = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+        if (!strongPassword.test(password)) {
+            alert("Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.");
+            event.preventDefault();
+            return;
+        }
+
+        // ✅ 4. Confirm password match
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            event.preventDefault();
+            return;
+        }
+
+        // ✅ 5. Check if email is already registered
+        try {
+            const checkEmail = await fetch("/auth/check-email?email=" + encodeURIComponent(email));
+            const response = await checkEmail.json();
+
+            if (response.exists) {
+                alert("Email is already registered.");
+                event.preventDefault();
+                return;
+            }
+
+            // ✅ If all checks pass, submit the form manually
+            event.target.submit();
+        } catch (err) {
+            console.error("Error checking email:", err);
+            alert("Something went wrong. Please try again.");
+        }
+    });
+
+    function togglePassword(id) {
+        const field = document.getElementById(id);
+        if (field.type === "password") {
+            field.type = "text";
+        } else {
+            field.type = "password";
+        }
+    }
+  </script>
+</body>
+</html>
